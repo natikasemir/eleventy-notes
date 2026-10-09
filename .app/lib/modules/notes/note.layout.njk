@@ -7,7 +7,8 @@
     if (isRoot) return "/";
 
     const pathPrefix = app.notes.pathPrefix.replace(/^\/|\/$/, '');
-    return `/${[pathPrefix, url].filter(Boolean).join('/')}/`;
+    const cleanUrl = url.replace(/^\//, '');
+    return `/${[pathPrefix, cleanUrl].filter(Boolean).join('/')}/`;
   }
 }
 ---
